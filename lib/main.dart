@@ -31,10 +31,34 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        centerTitle: true,
-      ),
-    );
+        appBar: AppBar(
+          title: Text(widget.title),
+          centerTitle: true,
+        ),
+        body: Center(
+            child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(),
+              foregroundColor: Colors.amberAccent,
+              backgroundColor: Colors.red,
+              onPressed: abrirGmail,
+              child: const Text('Abrir o Gmail'),
+            ),
+            ElevatedButton(
+                onPressed: fazerLigacao,
+                child: const Text('FAzer uma Ligação'),
+                style: ElevatedButton.styleFrom(
+                    foregroundColor: Colors.amberAccent,
+                    backgroundColor: Colors.red)),
+            ElevatedButton(
+                onPressed: enviarSMS,
+                child: const Text("Enviar SMS"),
+                style: ElevatedButton.styleFrom(
+                    foregroundColor: Colors.amberAccent,
+                    backgroundColor: Colors.red)),
+          ],
+        )));
   }
 }
